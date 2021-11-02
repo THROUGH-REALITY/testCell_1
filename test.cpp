@@ -28,5 +28,4 @@ void nextCell_test(){  //  直接移動
 int main(){
     const char* somep = "asd";
     char aaa = *somep;
-}   //  あいきゃんとあんだーすたんどわっとでぃすみーんず
-    //  わたしはどうしたらいいんでしょう？？？
+}   //  わからん
