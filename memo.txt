@@ -1,0 +1,22 @@
+調査範囲にセルの右上、左下追加 -> 7bit
+2で机配置？
+
+cMake!!!!!!!!
+
+
+    ↓↓↓分からん↓↓↓
+char配列とcharポインタとstd::string
+
+
+switch(rule){
+    case 1111111: tempCell = 1;
+        break;
+    case 1111110: tempCell = 1;
+        break;
+    
+
+
+
+
+}
+return tempCell;
