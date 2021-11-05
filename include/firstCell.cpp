@@ -5,15 +5,18 @@
 int cell[X][Y];    //   グローバル変数cellの定義
 
 void firstCell_1(int firstCellCount, int deskCountx, int deskCounty){   //  1（居るor居ない）
-    for(int x =0 ;x < X; x++){
-        cell[x][0] = 1;
+    for(int x =0; x < X; x++){
+        cell[x][0] = 2;
+        cell[x][Y - 1] = 2;
     }   //  上端
     cell[0][1] = 0;    //  出口
+    cell[X - 1][1] = 2;
     for(int y = 2; y < Y; y++){
-        cell[0][y] = 1;
+        cell[0][y] = 2;
+        cell[X - 1][y] = 2;
     }   //  左端
-    for(int x = 1; x < X; x++){
-        for(int y = 1; y < Y; y++){
+    for(int x = 1; x < X - 1; x++){
+        for(int y = 1; y < Y -1; y++){
             cell[x][y] = 0;
         }
     }   //  初期化
