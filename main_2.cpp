@@ -25,7 +25,7 @@ int main(int argc, char** argv){   //   0,1直接移動
         std::cout << std::endl << "test_" << testCount << " start! >>" << std::endl;
 
         timeCount = 0;  //  世代数
-        firstCell_1(studentCount, deskCountX, deskCountY);  //  初期配置設定  引数は(配置数, 机x{x <= (X - 2) / 2}, 机y{y <= (Y - 2) / 2})
+        firstCell_2(studentCount, deskCountX, deskCountY);  //  初期配置設定  引数は(配置数, 机x{x <= (X - 2) / 2}, 机y{y <= (Y - 2) / 2})
         
         existCell = remaining_2();    //  調査
         printCell(testCount, timeCount, existCell);     //  記録

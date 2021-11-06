@@ -1,9 +1,2 @@
 調査範囲にセルの右上、左下追加 -> 7bit
-cMake!!!!!!!!
-
-
-    ↓↓↓分からん↓↓↓
-char配列とcharポインタとstd::stringと
-
-ctrl + [ >> 左に -Tab
-ctrl + ] >> 左に  Tab
+オートマトンnext -> 障害物ありorなしでnextRule設定, if(dcx * dcy =! 0)or( == 0)で分岐

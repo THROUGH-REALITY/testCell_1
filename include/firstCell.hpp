@@ -7,6 +7,6 @@
 extern int cell[X][Y];  //  include先から参照していいですよ宣言
 
 void firstCell_1(int, int, int);
-void firstCell_2(int);
+void firstCell_2(int, int ,int);
 
 #endif // _FIRSTCELL_HPP_
