@@ -1,6 +1,7 @@
 #include "Fcell.h"
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 
 int roomSizex;              //  壁含む教室のサイズx
 int roomSizey;              //  壁含む教室のサイズy
@@ -29,6 +30,7 @@ int main(int argc, char** argv){   //   0,1直接移動
         std::cin >> roomSizey;
     }
     roomSize(roomSizex, roomSizey);    //   壁含む教室のサイズを他関数に引き渡し
+    
     std::cout << "\x1b[39m" << "Type studentCount (sc <= " << (roomSizex - 2) * (roomSizey - 2) << ")" << std::endl;
     std::cin >> studentCount;
     while(studentCount > (roomSizex - 2) * (roomSizey - 2)){
@@ -50,9 +52,14 @@ int main(int argc, char** argv){   //   0,1直接移動
         std::cout << "\x1b[31m" << "error: too large! Type deskCounty again (dcy <= " << maxdcy << ")" << std::endl;
         std::cin >> deskCounty;
     }
+    
     std::cout << "\x1b[39m" << "Type printFileName" << std::endl;
     std::cin >> hedFileName;
-    std::cout << "Type allTestCount" << std::endl;
+    while(fileExists(hedFileName)){
+        std::cout << "\x1b[31m" << "error: alreadey exists! Type printFileName again" << std::endl;
+        std::cin >> hedFileName;
+    }
+    std::cout << "\x1b[39m" << "Type allTestCount" << std::endl;
     std::cin >> allTestCount;
 
     for(int testCount = 1; testCount <= allTestCount; testCount++){
@@ -76,5 +83,5 @@ int main(int argc, char** argv){   //   0,1直接移動
         std::cout << "test_" << testCount << " has done!" << std::endl;
     } 
     std::cout << "all tests have done!";
-    return 0;
+    system("pause");
 }

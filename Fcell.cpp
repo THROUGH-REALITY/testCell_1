@@ -3,6 +3,8 @@
 #include <time.h>
 #include <fstream>
 #include <string>
+#include <filesystem>
+#include <iostream>
 
 // int cell[X][Y];    //   グローバル変数cellの定義
 
@@ -172,6 +174,12 @@ int remain(){  //  障害物あり(0,1のcellの合計)
     return rem;
 }
 
+
+bool fileExists(std::string hedFileName){
+    std::string fileName = hedFileName + "_" + std::to_string(1) + ".txt";
+    bool isExists = std::filesystem::exists(fileName);
+    return isExists;
+}
 
 void printCell(std::string hedFileName, int fileCount, int timeCount, int remain){
     std::ofstream writing_file;

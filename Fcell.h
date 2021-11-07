@@ -22,6 +22,7 @@ int nextRule(int, int, int, int, int);  //  オートマトンルール
 void nextCell_1();  //  オートマトン移動
 void nextCell_2();  //  直接移動
 
+bool fileExists(std::string);   //  ファイル存在判定
 void printCell(std::string, int, int, int);  //  結果ファイル出力
 
 int remain();  //  0,1のセルの合計
