@@ -69,7 +69,7 @@ void firstCell_2(int firstCellCount, int deskCountx, int deskCounty){   //  0,1 
         cell[x][sizey - 1] = 2;
     }   //  上下端
     cell[0][1] = 0;    //  出口
-    cell[sizex - 1][1] = 2;
+    cell[(unsigned int)(sizex - 1)][1] = 2;
     for(int y = 2; y < sizey; y++){
         cell[0][y] = 2;
         cell[sizex - 1][y] = 2;
@@ -201,16 +201,16 @@ void coutCell(int timeCount, int existCell){
     for(int y = 0; y < sizey; y++){
         for(int x =0; x < sizex; x++){     
             if(cell[x][y] == 0){
-                std::cout << "\x1b[49m]" << cell[x][y] << " ";
+                std::cout << "\033[m" << cell[x][y] << " ";
             }
             if(cell[x][y] == 1){
-                std::cout << "\x1b[43m]" << cell[x][y] << "\x1b[49m]" << " ";
+                std::cout << "\033[43m" << cell[x][y] << "\033[m" << " ";
             }
             if(cell[x][y] == 2){
-                std::cout << "\x1b[44m]" << cell[x][y] << "\x1b[49m]" << " ";
+                std::cout << "\033[44m" << cell[x][y] << "\033[m" << " ";
             }        
         }
-        std::cout << "\x1b[49m]" << std::endl;
+        std::cout << "\033[m" << std::endl;
     }
-    std::cout << '/' << remain << std::endl << std::endl;
+    std::cout << '/' << existCell << std::endl << std::endl;
 }
