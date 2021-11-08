@@ -5,6 +5,7 @@
 #include <string>
 #include <filesystem>
 #include <iostream>
+#include <cstdlib>
 
 // int cell[X][Y];    //   グローバル変数cellの定義
 
@@ -193,4 +194,23 @@ void printCell(std::string hedFileName, int fileCount, int timeCount, int remain
         writing_file << std::endl;
     }
     writing_file << '/' << remain << std::endl << std::endl;
+}
+
+void coutCell(int timeCount, int existCell){
+    std::cout << "<" << timeCount << ">" << std::endl;
+    for(int y = 0; y < sizey; y++){
+        for(int x =0; x < sizex; x++){     
+            if(cell[x][y] == 0){
+                std::cout << "\x1b[49m]" << cell[x][y] << " ";
+            }
+            if(cell[x][y] == 1){
+                std::cout << "\x1b[43m]" << cell[x][y] << "\x1b[49m]" << " ";
+            }
+            if(cell[x][y] == 2){
+                std::cout << "\x1b[44m]" << cell[x][y] << "\x1b[49m]" << " ";
+            }        
+        }
+        std::cout << "\x1b[49m]" << std::endl;
+    }
+    std::cout << '/' << remain << std::endl << std::endl;
 }

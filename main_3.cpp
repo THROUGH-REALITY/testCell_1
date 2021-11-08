@@ -70,7 +70,7 @@ int main(int argc, char** argv){   //   0,1直接移動
         
         existCell = remain();    //  調査
         printCell(hedFileName, testCount, timeCount, existCell);     //  記録
-        std::cout << "time: " << timeCount << ", existCell: " << existCell << std::endl;
+        coutCell(timeCount, existCell);
         
         while(existCell > 0){
             timeCount++;  //  世代数
@@ -78,7 +78,7 @@ int main(int argc, char** argv){   //   0,1直接移動
             
             existCell = remain();    //  調査
             printCell(hedFileName, testCount, timeCount, existCell);   //  記録
-            std::cout << "time: " << timeCount << ", existCell: " << existCell << std::endl;
+            coutCell(timeCount, existCell);
         }
         std::cout << "test_" << testCount << " has done!" << std::endl;
     } 
