@@ -1,2 +1,1 @@
-if(cell[][] == 0) cout << bgcolor:default << cell[][] << " ";
-if(cell[][] == 1) cout << bgcolor:
+ico サイズ変更
