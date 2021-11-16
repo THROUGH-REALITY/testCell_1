@@ -185,8 +185,11 @@ bool fileExists(std::string hedFileName){
 void printCell(std::string hedFileName, int fileCount, int timeCount, int remain){
     std::ofstream writing_file;
     std::ofstream writing_file2;
+    std::ofstream writing_file3;
     std::string fileName = hedFileName + "_" + std::to_string(fileCount) + ".txt";
     std::string rfileName = hedFileName + "_allresult.txt";
+    std::string rfileName2 = hedFileName + "_allresult_xlsx.txt";
+
     writing_file.open(fileName, std::ios::app);
     writing_file << "<" << timeCount << ">" << std::endl;
     for(int y = 0; y < sizey; y++){
@@ -196,6 +199,11 @@ void printCell(std::string hedFileName, int fileCount, int timeCount, int remain
         writing_file << std::endl;
     }
     writing_file << '/' << remain << std::endl << std::endl;
+
+    if(fileCount == 0){        
+        writing_file3.open(rfileName2, std::ios::app);
+        writing_file3 << "test,time:" << std::endl;
+    }
 
     if(timeCount == 0){
         writing_file2.open(rfileName, std::ios::app);
@@ -207,9 +215,13 @@ void printCell(std::string hedFileName, int fileCount, int timeCount, int remain
             writing_file2 << std::endl;
         }
     }
+
     if(remain == 0){
         writing_file2.open(rfileName, std::ios::app);
         writing_file2 << "t == " << timeCount << std::endl << std::endl;
+        
+        writing_file3.open(rfileName2, std::ios::app);
+        writing_file3 << fileCount << ',' << timeCount << std::endl;
     }
 }
 
