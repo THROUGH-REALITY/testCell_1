@@ -51,7 +51,6 @@ void firstCell_1(int firstCellCount, int deskCountx, int deskCounty){   //  0,1 
         }   //  机(障害物)配置
     }
 
-    srand((unsigned int)time(NULL));
     for(int i = 0; i < firstCellCount; i++){
         int ramx = 1 + rand() % (sizex - 2);
         int ramy = 1 + rand() % (sizey - 2);
@@ -90,7 +89,6 @@ void firstCell_2(int firstCellCount, int deskCountx, int deskCounty){   //  0,1 
         }   //  机(障害物)配置
     }
 
-    srand((unsigned int)time(NULL));
     for(int i = 0; i < firstCellCount; i++){
         int ramx = 1 + rand() % (sizex - 2);
         int ramy = 1 + rand() % (sizey - 2);

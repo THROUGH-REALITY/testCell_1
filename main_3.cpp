@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <windows.h>
+#include <time.h>
 
 #define notDisplayMode 1
 #define cmdDisplayMode 2
@@ -82,6 +83,7 @@ int main(int argc, char** argv){   //   0,1直接移動
     std::cin >> allTestCount;
 
         /*  実行パート  */
+    srand((unsigned int)time(NULL));
     for(int testCount = 1; testCount <= allTestCount; testCount++){
         std::cout << std::endl << "test_" << testCount << " start! >>" << std::endl;
 
